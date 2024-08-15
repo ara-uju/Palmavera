@@ -4,14 +4,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // howler
     var cheer = new Howl({
+        html5: false,
         src: ['../media/cheer.wav']
     });
 
     var trumpet = new Howl({
+        html5: false,
         src: ['../media/trumpet.wav']
     });
 
     var clap = new Howl({
+        html5: false,
         src: '../media/clap.wav'
     });
 
