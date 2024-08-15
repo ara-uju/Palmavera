@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
     --intro-text-color: white;
-    --btn-color: white;
+    --btn-color: #ffe900;
     --btn-bg-color: #ffe900;
     --btn-hover-color: white;
     --btn-hover-bg-color: #ffe900;
 
-    --load-bg-color: #ec545e;
+    --load-bg-color: #ff2b75;
 }
 
 * {
@@ -20,6 +22,12 @@ body {
     align-items: center;
     justify-content: center;
     overflow: clip;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .loader {
@@ -51,18 +59,24 @@ body {
     background-color: var(--load-bg-color);
 }
 
+.party-on .intro {
+    pointer-events: none;
+}
+
 .intro-container {
-    height: 3.2rem;;
+    height: 3.2rem;
     line-height: 110%;
     overflow: clip;
 }
 
 .intro-el {
     position: relative;
-    height: 3.2rem;;
+    height: 2.6rem;
     line-height: 110%;
-    font-size: 3.2rem;
+    text-align: center;
+    font-size: 2.4rem;
     color: var(--intro-text-color);
+    text-transform: lowercase;
 }
 
 .intro-el.empty {
@@ -70,40 +84,35 @@ body {
 }
 
 .intro-el.btn {
-    background-color: var(--btn-bg-color);
+    border-color: var(--btn-bg-color);
+    border-width: 4px;
+    border-style: solid;
     color: var(--btn-color);
-    padding: .5rem 2rem;
+    padding: .4rem 2rem;
+    font-size: 2rem;
     height: auto;
+    font-weight: 800;
     line-height: normal;
-    border-radius: 8px;
+    border-radius: 12px;
     align-self: center;
     cursor: pointer;
     z-index: 100;
     transition: all .5s ease;
     user-select: none;
-}
-
-.party-on .intro-el.btn {
-    pointer-events: none;
+    text-transform: uppercase;
 }
 
 .intro-el.btn p {
     pointer-events: none;
 }
 
-.party-on .intro-el.btn {
-    background-color: var(--btn-hover-bg-color);
-    color: var(--btn-hover-color);
-}
-
 /* BTN - emoji animation */
 .emoji-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    transition: opacity .4s ease;
-}
-
-.party-on .emoji-wrapper {
-    opacity: 1;
+    transition: opacity .25s ease;
 }
 
 .emoji-anim {
@@ -114,6 +123,7 @@ body {
     font-size: 1.2em;
     z-index: -1;
     transition: all .5s ease;
+    opacity: 1;
 }
 
 
@@ -147,38 +157,38 @@ body {
 
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(1) {
+.party-on .emoji-anim:nth-child(1) {
     transform: translate(-150px, 100px) rotate(-270deg) scale(0.25);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(2) {
-    transform: translate(-60px, 80px) rotate(270deg) scale(0.5);
+.party-on .emoji-anim:nth-child(2) {
+    transform: translate(-160px, 180px) rotate(270deg) scale(0.5);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(3) {
-    transform: translate(0px, 45px) rotate(160deg);
+.party-on .emoji-anim:nth-child(3) {
+    transform: translate(0px, 145px) rotate(160deg);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(4) {
-    transform: translate(50px, 0px) rotate(85deg) scale(0.3);
+.party-on .emoji-anim:nth-child(4) {
+    transform: translate(150px, 0px) rotate(85deg) scale(0.3);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(5) {
-    transform: translate(0px, -70px) rotate(320deg) scale(0.3);
+.party-on .emoji-anim:nth-child(5) {
+    transform: translate(0px, -170px) rotate(320deg) scale(0.3);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(6) {
-    transform: translate(-45px, -10px) rotate(710deg) scale(0.3);
+.party-on .emoji-anim:nth-child(6) {
+    transform: translate(-145px, -110px) rotate(710deg) scale(0.3);
     opacity: 0;
 }
 
-.party-on .intro-el.btn .emoji-anim:nth-child(7) {
-    transform: translate(60px, -80px) rotate(120deg) scale(0.3);
+.party-on .emoji-anim:nth-child(7) {
+    transform: translate(160px, -180px) rotate(120deg) scale(0.3);
     opacity: 0;
 }
 
@@ -215,7 +225,7 @@ section {
     justify-content: center;
     z-index: -1;
     transform-origin: center;
-    background-image: url('../media/bg.png');
+    background-image: url('../media/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -229,9 +239,9 @@ section {
     position: absolute;
     width: 100%;
     z-index: 10;
+    top: 25svh;
     mix-blend-mode: color;
-    mix-blend-mode: luminosity;
-    opacity: .8;
+    mix-blend-mode: overlay;
     transform-origin: center;
 }
 
